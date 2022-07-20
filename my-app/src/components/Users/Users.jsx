@@ -9,7 +9,9 @@ let Users = (props) => {
         pages.push(i);
     }
     return (
+
         <div>
+            <div>1</div>
             <div>
                 {pages.map(p => {
                     return <span className={props.currentPage === p && s.selectedPage}
