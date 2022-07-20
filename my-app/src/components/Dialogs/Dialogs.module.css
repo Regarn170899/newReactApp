@@ -1,0 +1,25 @@
+.dialogs {
+    margin-left: 20px;
+
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+
+}
+.dialogs-items{
+
+
+}
+.dialog{
+    margin: 10px;
+    color: white;
+}
+.dialogs.active{
+    color: darkred;
+}
+.messages{
+
+}
+.message{
+    margin:10px;
+
+}

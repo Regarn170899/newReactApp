@@ -1,0 +1,10 @@
+*{
+    padding:0px;
+    margin :5px;
+}
+.img{
+    max-width: 70px;
+}
+.selectedPage{
+    font-size: 20px;
+}
