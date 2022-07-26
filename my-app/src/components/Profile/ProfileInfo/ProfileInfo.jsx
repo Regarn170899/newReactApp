@@ -1,6 +1,11 @@
 import s from "./ProfileInfo.module.css";
 import React from "react";
-function ProfileInfo() {
+import Preloader from "../../common/Preloader/Preloader";
+
+function ProfileInfo(props) {
+    if(!props.profile){
+        return <Preloader/>
+    }
     return (
         <div>
             <div>
@@ -9,7 +14,7 @@ function ProfileInfo() {
                     className={s.content__image}></img>
             </div>
             <div className='content__my_logo'>
-                <img src='https://flyclipart.com/thumb2/cincinnati-bengals-nfl-cincinnati-reds-logo-decal-632814.png'
+                <img src={props.profile.photos.large}
                      className={s.logo}></img>
                 <div>Discriptions</div>
 

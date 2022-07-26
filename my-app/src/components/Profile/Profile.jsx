@@ -3,10 +3,10 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import React from "react";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-function Profile() {
+function Profile(props) {
     return (
         <div className={s.content}>
-            <ProfileInfo />
+            <ProfileInfo profile={props.profile}/>
             <MyPostsContainer/>
         </div>
     );

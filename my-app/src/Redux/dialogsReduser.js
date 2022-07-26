@@ -26,6 +26,7 @@ const dialogsReduser = (state = initialState, action) => {
         case 'SEND-NEW-MESSAGE': {
             return {
                 ...state,
+                newMessage: '',
                 messages: [...state.messages, {id: 7, message: state.newMessage}],
             };
         }
