@@ -8,3 +8,17 @@
   .header img {
     width: 50px;
   }
+  .loginBlock{
+      margin-top: 10px;
+      float: right;
+      width: 75px;
+
+
+
+  }
+  .linkLogin{
+   text-decoration: none;
+      color: white;
+
+
+  }
