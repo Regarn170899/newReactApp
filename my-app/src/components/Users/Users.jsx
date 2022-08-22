@@ -1,7 +1,8 @@
 import React from "react";
 import s from "./Users.module.css";
 import userPhoto from "../../assets/image/user.png";
-import {NavLink, Route, Routes} from "react-router-dom";
+import {NavLink,} from "react-router-dom";
+
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -24,16 +25,16 @@ let Users = (props) => {
                 props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
-                            <NavLink to={'/profile/'+u.id}>
+                            <NavLink to={'/profile/' + u.id}>
                                 <img className={s.img} src={u.photos.small != null ? u.photos.small : userPhoto}/>
                             </NavLink>
                         </div>
                         <div>
-                            {u.followed ? <button onClick={() => {
-                                    props.unfollow(u.id)
-                                }}>Unfollow</button> :
-                                <button onClick={() => {
-                                    props.follow(u.id)
+                            {u.followed ? <button disabled={props.followingInProgress.some(id=>id===u.id)} onClick={()=>{
+                                    props.unfollow(u.id);}
+                                }>Unfollow</button> :
+                                <button disabled={props.followingInProgress.some(id=>id===u.id)} onClick={()=> {
+                                    props.follow(u.id);
                                 }}>Follow</button>}
                         </div>
                     </span>
@@ -49,10 +50,10 @@ let Users = (props) => {
                     </span>
 
                 </div>)
-                }
-                </div>
-                )
+            }
+        </div>
+    )
 
-                }
+}
 
-                export default Users;
+export default Users;

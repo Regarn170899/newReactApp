@@ -26,8 +26,7 @@ const dialogsReduser = (state = initialState, action) => {
         case 'SEND-NEW-MESSAGE': {
             return {
                 ...state,
-                newMessage: '',
-                messages: [...state.messages, {id: 7, message: state.newMessage}],
+                messages: [...state.messages, {id: 7, message: action.newMessage}],
             };
         }
         default: {
@@ -36,9 +35,10 @@ const dialogsReduser = (state = initialState, action) => {
     }
 };
 
-export function sendMessageCreator() {
+export function sendMessageCreator(newMessage) {
     return {
-        type: 'SEND-NEW-MESSAGE'
+        type: 'SEND-NEW-MESSAGE',
+        newMessage:newMessage
     };
 }
 
